@@ -33,6 +33,12 @@ const QuoteGenerator = () => {
     setQuote(fetchedQuote);
   };
 
+  const onTweetQuote = () => {
+    const { text, author } = quote;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${text} - ${author}`;
+    window.open(twitterUrl, '_blank');
+  };
+
   return (
     <>
       {!isLoading ? (
@@ -60,6 +66,7 @@ const QuoteGenerator = () => {
                 styles['button'],
                 styles['button--twitter']
               )}
+              onClick={onTweetQuote}
             >
               <i className="fab fa-twitter"></i>
             </button>
