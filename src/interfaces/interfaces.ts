@@ -8,3 +8,8 @@ export interface QuoteResponse {
   length: number;
   tags: string[];
 }
+
+export interface Quote {
+  text: string;
+  author: string;
+}
